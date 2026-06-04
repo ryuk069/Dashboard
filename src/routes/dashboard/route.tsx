@@ -1,15 +1,15 @@
-import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import Header from "../../components/layout/header";
 import Sidebar from "../../components/layout/sidebar";
 import { useState } from "react";
 
 export const Route = createFileRoute("/dashboard")({
-    beforeLoad: () => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      throw redirect({ to: "/login" });
-    }
-  },
+  //   beforeLoad: () => {
+  //   const user = localStorage.getItem("user");
+  //   if (!user) {
+  //     throw redirect({ to: "/login" });
+  //   }
+  // },
   component: RouteComponent
 
 });

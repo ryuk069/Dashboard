@@ -8,7 +8,7 @@ function RouteComponent() {
   return (
     <div className="w-full h-full">
       <iframe
-        src="http://localhost:4173"
+        src="https://weather-app-alpha-rose-98.vercel.app/"
         className="h-1/1 w-full rounded-xl border"
       ></iframe>
     </div>
