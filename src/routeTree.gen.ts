@@ -18,6 +18,7 @@ import { Route as DashboardMetricRouteImport } from './routes/dashboard/metric'
 import { Route as DashboardDomainRouteImport } from './routes/dashboard/domain'
 import { Route as DashboardDatabasesRouteImport } from './routes/dashboard/databases'
 import { Route as DashboardApplicationWeatherRouteImport } from './routes/dashboard/application/weather'
+import { Route as DashboardApplicationTourismRouteImport } from './routes/dashboard/application/tourism'
 import { Route as DashboardApplicationTodoRouteImport } from './routes/dashboard/application/todo'
 import { Route as DashboardApplicationSocialAppRouteImport } from './routes/dashboard/application/social-app'
 import { Route as DashboardApplicationFileManagerRouteImport } from './routes/dashboard/application/file-manager'
@@ -74,6 +75,12 @@ const DashboardApplicationWeatherRoute =
   DashboardApplicationWeatherRouteImport.update({
     id: '/application/weather',
     path: '/application/weather',
+    getParentRoute: () => DashboardRouteRoute,
+  } as any)
+const DashboardApplicationTourismRoute =
+  DashboardApplicationTourismRouteImport.update({
+    id: '/application/tourism',
+    path: '/application/tourism',
     getParentRoute: () => DashboardRouteRoute,
   } as any)
 const DashboardApplicationTodoRoute =
@@ -161,6 +168,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/application/file-manager': typeof DashboardApplicationFileManagerRoute
   '/dashboard/application/social-app': typeof DashboardApplicationSocialAppRoute
   '/dashboard/application/todo': typeof DashboardApplicationTodoRoute
+  '/dashboard/application/tourism': typeof DashboardApplicationTourismRoute
   '/dashboard/application/weather': typeof DashboardApplicationWeatherRoute
 }
 export interface FileRoutesByTo {
@@ -182,6 +190,7 @@ export interface FileRoutesByTo {
   '/dashboard/application/file-manager': typeof DashboardApplicationFileManagerRoute
   '/dashboard/application/social-app': typeof DashboardApplicationSocialAppRoute
   '/dashboard/application/todo': typeof DashboardApplicationTodoRoute
+  '/dashboard/application/tourism': typeof DashboardApplicationTourismRoute
   '/dashboard/application/weather': typeof DashboardApplicationWeatherRoute
 }
 export interface FileRoutesById {
@@ -205,6 +214,7 @@ export interface FileRoutesById {
   '/dashboard/application/file-manager': typeof DashboardApplicationFileManagerRoute
   '/dashboard/application/social-app': typeof DashboardApplicationSocialAppRoute
   '/dashboard/application/todo': typeof DashboardApplicationTodoRoute
+  '/dashboard/application/tourism': typeof DashboardApplicationTourismRoute
   '/dashboard/application/weather': typeof DashboardApplicationWeatherRoute
 }
 export interface FileRouteTypes {
@@ -229,6 +239,7 @@ export interface FileRouteTypes {
     | '/dashboard/application/file-manager'
     | '/dashboard/application/social-app'
     | '/dashboard/application/todo'
+    | '/dashboard/application/tourism'
     | '/dashboard/application/weather'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -250,6 +261,7 @@ export interface FileRouteTypes {
     | '/dashboard/application/file-manager'
     | '/dashboard/application/social-app'
     | '/dashboard/application/todo'
+    | '/dashboard/application/tourism'
     | '/dashboard/application/weather'
   id:
     | '__root__'
@@ -272,6 +284,7 @@ export interface FileRouteTypes {
     | '/dashboard/application/file-manager'
     | '/dashboard/application/social-app'
     | '/dashboard/application/todo'
+    | '/dashboard/application/tourism'
     | '/dashboard/application/weather'
   fileRoutesById: FileRoutesById
 }
@@ -344,6 +357,13 @@ declare module '@tanstack/react-router' {
       path: '/application/weather'
       fullPath: '/dashboard/application/weather'
       preLoaderRoute: typeof DashboardApplicationWeatherRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/application/tourism': {
+      id: '/dashboard/application/tourism'
+      path: '/application/tourism'
+      fullPath: '/dashboard/application/tourism'
+      preLoaderRoute: typeof DashboardApplicationTourismRouteImport
       parentRoute: typeof DashboardRouteRoute
     }
     '/dashboard/application/todo': {
@@ -443,6 +463,7 @@ interface DashboardRouteRouteChildren {
   DashboardApplicationFileManagerRoute: typeof DashboardApplicationFileManagerRoute
   DashboardApplicationSocialAppRoute: typeof DashboardApplicationSocialAppRoute
   DashboardApplicationTodoRoute: typeof DashboardApplicationTodoRoute
+  DashboardApplicationTourismRoute: typeof DashboardApplicationTourismRoute
   DashboardApplicationWeatherRoute: typeof DashboardApplicationWeatherRoute
 }
 
@@ -463,6 +484,7 @@ const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
   DashboardApplicationFileManagerRoute: DashboardApplicationFileManagerRoute,
   DashboardApplicationSocialAppRoute: DashboardApplicationSocialAppRoute,
   DashboardApplicationTodoRoute: DashboardApplicationTodoRoute,
+  DashboardApplicationTourismRoute: DashboardApplicationTourismRoute,
   DashboardApplicationWeatherRoute: DashboardApplicationWeatherRoute,
 }
 

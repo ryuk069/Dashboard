@@ -46,6 +46,12 @@ const menuItems = [
         parent: "Application",
       },
       {
+        id: "tourism",
+        label: "Tourism",
+        path: "/dashboard/application/tourism",
+        parent: "Application",
+      },
+      {
         id: "calender",
         label: "Calender",
         path: "/dashboard/application/calender",
@@ -277,10 +283,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sbc }) => {
                 >
                   {item.submenu.map((submenuitem) => {
                     return (
-                      <div
-                        key={submenuitem.id}
-                        className="flex pl-5 relative "
-                      >
+                      <div key={submenuitem.id} className="flex pl-5 relative ">
                         <div className="border border-[#0ad793]"></div>
                         <ul
                           className={` ${
@@ -290,13 +293,15 @@ const Sidebar: React.FC<SidebarProps> = ({ sbc }) => {
                           } flex-1 cursor-pointer mb-2 relative left-[13.5px]`}
                           onClick={() => handleMenu(submenuitem)}
                         >
-                          <li className={` ${
-                            activeSubMenu.child == submenuitem.id
-                              ? "list-disc"
-                              : "hover:list-disc"
-                          }`}>
+                          <li
+                            className={` ${
+                              activeSubMenu.child == submenuitem.id
+                                ? "list-disc"
+                                : "hover:list-disc"
+                            }`}
+                          >
                             <p className="hover:text-[#0ad793]">
-                          {submenuitem.label}
+                              {submenuitem.label}
                             </p>
                           </li>
                         </ul>
