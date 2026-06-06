@@ -7,7 +7,10 @@ export const Route = createFileRoute('/dashboard/application/todo')({
 function RouteComponent() {
   return (
     <div className="w-full h-full">
-              Hello From todo
-    </div>
+          <iframe
+            src="https://to-do-rose-nine.vercel.app/"
+            className="h-1/1 w-full rounded-xl border"
+          ></iframe>
+        </div>
   );
 }
